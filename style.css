@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+.page-one {
+  background:
+    radial-gradient(circle at top left, rgba(255, 168, 215, 0.9), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(90, 130, 255, 0.9), transparent 35%),
+    linear-gradient(135deg, #20102f, #5b1f43, #111827);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+}
+
+.card {
+  width: min(720px, 100%);
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 30px;
+  padding: 38px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 2;
+}
+
+.small-title {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  opacity: 0.78;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(36px, 7vw, 76px);
+  line-height: 0.98;
+}
+
+.subtitle {
+  margin: 18px 0 24px;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+textarea {
+  width: 100%;
+  min-height: 170px;
+  border: none;
+  outline: none;
+  resize: vertical;
+  border-radius: 22px;
+  padding: 20px;
+  font-size: 18px;
+  color: #21152c;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+button,
+.back-link {
+  display: inline-block;
+  margin-top: 18px;
+  border: none;
+  border-radius: 999px;
+  padding: 15px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #230b25;
+  background: linear-gradient(135deg, #fff, #ffd1e8, #b9c7ff);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.45;
+}
+
+.shape-one {
+  width: 180px;
+  height: 180px;
+  background: #ff79b8;
+  left: 8%;
+  top: 12%;
+}
+
+.shape-two {
+  width: 260px;
+  height: 260px;
+  background: #72d6ff;
+  right: 5%;
+  bottom: 10%;
+}
+
+.shape-three {
+  width: 110px;
+  height: 110px;
+  background: #fff0a8;
+  right: 18%;
+  top: 18%;
+}
+
+/* Result page */
+.result-page {
+  background: #06070d;
+}
+
+.result-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.photo-side {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #111;
+}
+
+.photo-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.9) contrast(1.08) brightness(0.75);
+  transform: scale(1.03);
+}
+
+.photo-side::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(110deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.76)),
+    repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 10px);
+  z-index: 1;
+}
+
+.photo-side::after {
+  content: "BROKEN MEMORY";
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+  z-index: 2;
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.crack {
+  position: absolute;
+  z-index: 2;
+  left: 46%;
+  top: -10%;
+  width: 3px;
+  height: 125%;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.45);
+  transform: rotate(12deg);
+  clip-path: polygon(40% 0, 100% 8%, 40% 18%, 75% 30%, 25% 42%, 80% 56%, 35% 70%, 90% 84%, 45% 100%, 0 100%, 35% 82%, 5% 66%, 50% 52%, 15% 38%, 65% 25%, 20% 12%, 60% 0);
+}
+
+.content-side {
+  min-height: 100vh;
+  padding: clamp(28px, 6vw, 78px);
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(95, 70, 180, 0.34), transparent 28%),
+    linear-gradient(135deg, #070812, #15182a 48%, #25111d);
+}
+
+.content-box {
+  max-width: 650px;
+}
+
+.content-box h1 {
+  font-size: clamp(34px, 5vw, 66px);
+  margin-bottom: 18px;
+}
+
+.user-answer {
+  padding: 22px;
+  border-left: 4px solid #ffd1e8;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  font-size: 20px;
+  line-height: 1.65;
+  margin: 24px 0;
+}
+
+.lyric-card {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.lyric-card h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.lyric-card p {
+  margin: 10px 0;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.music-box {
+  margin-top: 22px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+
+.music-note {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border: none;
+}
+
+@media (max-width: 900px) {
+  .result-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-side {
+    min-height: 64vh;
+  }
+
+  .content-side {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .card {
+    padding: 26px;
+    border-radius: 24px;
+  }
+
+  textarea {
+    min-height: 150px;
+  }
+}
